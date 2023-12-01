@@ -54,18 +54,29 @@ void printNumbersArray(int numbers[], int size)
 	return;
 }
 
-int main()
-{
 
-	Character player;
+
+
+int main()
+{ 
+	//these are the  2 ways to initialize a new instance of a class' type
+	Character player(200, 50);
+	Character plater2 = Character(150, 25);
+
+	player.attack(plater2);
+
 	//C++ does not hold your hand nearly as much as C# does.
-	int number = 1;
+	int number = 500000;
+	int* numptr = &number;
 	float decimal = 0.5f;
 	bool onOff = true; 
 	char letter = 'a';
 	double BigDecimal = .123456789;
 
 	bool weapon = true; //it works.
+
+
+	std::cout << *numptr << std::endl;
 
 	//everything is numbers so you can store other types in eachother without issue. for ex a bool = true or false aka 1 or 0 which can be used in equations;
 	letter = 5;
@@ -107,7 +118,7 @@ int main()
 
 
 
-	return -1;
+	return 1;
 
 	
 

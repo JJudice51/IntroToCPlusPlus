@@ -4,7 +4,15 @@ class Character
 {
 
 public:
+
+
+	Character();
+
+	Character(float health, float damage);
+
 	void takeDamage(float damage);
+
+	void attack(Character opponent);
 
 	float getHealth() { return m_health; }
 	float getDamage() { return m_damage; }
@@ -15,6 +23,16 @@ public:
 	private:
 		float m_health;
 		float m_damage;
+
+
+
+
+
+
+
+
+
+
 
 
 };
