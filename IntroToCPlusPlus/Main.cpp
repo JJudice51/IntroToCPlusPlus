@@ -57,17 +57,55 @@ void printNumbersArray(int numbers[], int size)
 
 
 
+///create a function for a character creation menu
+///the function should ask the player to input a health and damage
+/// value for a new character. create a new dynamically allocated character with the
+/// stats and return it.
+///  print the chatacter's stats in the main function.
+
+Character* createCharacter()
+{
+	float health;
+	float damage;
+	std::cout << "Let's make your character!" << std::endl;
+	std::cout << "What's your character's health?" << std::endl;
+	std::cin >> health;
+	std::cout << "What's your character's damage?" << std::endl;
+	std::cin >> damage;
+
+	Character* created = new Character(health, damage);
+
+
+	return created;
+	
+}
+
+
+
+
 int main()
 { 
 	//these are the  2 ways to initialize a new instance of a class' type
 	Character player(200, 50);
 	Character plater2 = Character(150, 25);
+	
+	//Automatic memory allocation
+	Character autumn(100, 5);
+	Character* autumnPtr = &autumn;
+
+	//Dynamic memory allocation. you must delete yourself.
+	Character* dyna = new Character;
+	
+
+		//These are the 2 ways to dereference something in C++
+	int autumnHealth = (*autumnPtr).getHealth();
+	int autumnDamage = autumnPtr->getDamage();
 
 	player.attack(plater2);
-
+	
 	//C++ does not hold your hand nearly as much as C# does.
 	int number = 500000;
-	int* numptr = &number;
+	int* numPtr = &number;
 	float decimal = 0.5f;
 	bool onOff = true; 
 	char letter = 'a';
@@ -76,7 +114,7 @@ int main()
 	bool weapon = true; //it works.
 
 
-	std::cout << *numptr << std::endl;
+	std::cout << *numPtr << std::endl;
 
 	//everything is numbers so you can store other types in eachother without issue. for ex a bool = true or false aka 1 or 0 which can be used in equations;
 	letter = 5;
@@ -113,10 +151,13 @@ int main()
 	char name1[] = { 'J', 'u', 's', 't', 'i', 'n', '\0'};
 	char name2[] = "Judice";
 
+	
+	dyna = createCharacter();
+
+	dyna->printStats();
 
 
-
-
+	delete dyna;
 
 	return 1;
 

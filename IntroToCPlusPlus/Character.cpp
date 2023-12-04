@@ -1,10 +1,13 @@
 #include "Character.h"
+#include <iostream>
 
 //Default Constructor
 Character::Character()
 {
+	
 	m_health = 0;
 	m_damage = 0;
+
 }
 
 /// <summary>
@@ -38,4 +41,13 @@ void Character::attack(Character opponent)
 
 
 
-
+/// <summary>
+/// 
+/// </summary>
+/// <param name="printed"></param>
+void Character::printStats()
+{
+	std::cout << "Here's your STATS!!!" << std::endl;
+	std::cout << getHealth() << std::endl;
+	std::cout << getDamage() << std::endl;
+}
