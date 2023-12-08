@@ -80,6 +80,24 @@ Character* createCharacter()
 	
 }
 
+int addArraySlot(int numbers[], int size, int lastNumber)
+{
+	int* newNumbers = new int[size + 1];
+
+	for (int i = 0; i < size + 1; i++)
+	{
+		numbers[i] = newNumbers[i];
+		
+			if (i = size)
+			{
+				lastNumber = newNumbers[size + 1];
+			}
+	}
+	numbers = newNumbers;
+	delete[] newNumbers;
+	newNumbers = nullptr;
+
+}
 
 
 
@@ -147,6 +165,7 @@ int main()
 	int numbos[3] = { 1,2,3 };
 	numbos[0] = 4;
 	printNumbersArray(numbos, 3);
+	addArraySlot(numbos, 3, 6);
 
 	char name1[] = { 'J', 'u', 's', 't', 'i', 'n', '\0'};
 	char name2[] = "Judice";
@@ -159,10 +178,16 @@ int main()
 
 	delete dyna;
 
-	return 1;
-
 	
 
+	return 1;
+
+
+	///create a fucntion that acan add an integer to the end of an integer array
+	///input {1,2,3,4,5}, 6
+	///output {1,2,3,4,5,6}
+	                                                                                                                                                                                                                                                                                                                                       
+	
 
 
 
